@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="icon" href="favicon.ico?v=2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2 class="heading">Wordle</h2>
+        <hr>
+    </header>
+    <main>
+        <section class="game-board none" id="game-board">
+            <script>
+                for (let i = 0; i < 6; i++) {
+                    document.write(`<div class="row" id="row-${i}">`);
+                    for (let j = 0; j < 5; j++) {
+                        document.write(`<div class="square" id="square-${i}-${j}"></div>`);
+                    }
+                    document.write('</div>');
+                }
+            </script>
+        </section>
+
+        <section class="keyboard none" id="keyboard">
+            <div class="key-row">
+                <div class="key" id="q">Q</div>
+                <div class="key" id="w">W</div>
+                <div class="key" id="e">E</div>
+                <div class="key" id="r">R</div>
+                <div class="key" id="t">T</div>
+                <div class="key" id="y">Y</div>
+                <div class="key" id="u">U</div>
+                <div class="key" id="i">I</div>
+                <div class="key" id="o">O</div>
+                <div class="key" id="p">P</div>
+            </div>
+            <div class="key-row">
+                <div class="key" id="a">A</div>
+                <div class="key" id="s">S</div>
+                <div class="key" id="d">D</div>
+                <div class="key" id="f">F</div>
+                <div class="key" id="g">G</div>
+                <div class="key" id="h">H</div>
+                <div class="key" id="j">J</div>
+                <div class="key" id="k">K</div>
+                <div class="key" id="l">L</div>
+            </div>
+            <div class="key-row">
+                <div class="key large" id="enter">ENTER</div>
+                <div class="key" id="z">Z</div>
+                <div class="key" id="x">X</div>
+                <div class="key" id="c">C</div>
+                <div class="key" id="v">V</div>
+                <div class="key" id="b">B</div>
+                <div class="key" id="n">N</div>
+                <div class="key" id="m">M</div>
+                <div class="key large" id="backspace">⌫</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h6 class="footing">All rights reserved.</h6>
+    </footer>
+    <div class="popup" id="popup-success">
+        <div class="icons">
+            <i class="fa-solid fa-circle-check" style="color: #63E6BE;">
+            </i><i class="fa-solid fa-trophy" style="color: #FFD43B;"></i>
+        </div>
+        <hr>
+        <div style="text-align: center;"> <h2 class="congrats">Congratulations,<br>you won!</h2></div>
+        <button class="again" id="again">Play again</button>
+    </div>
+    <div class="popup" id="popup-loss">
+        <div class="icons">
+            <i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i>
+            <i class="fa-solid fa-skull-crossbones" style="color: #ffffff;"></i>
+        </div>
+        <hr>
+        <div style="text-align: center;"><h1 class="congrats-2">Not your lucky day!</h1></div>
+        <button class="again" id="again">Play again</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    min-height: 100%;
+    background-color: #121213;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER STYLING */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.heading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    width: 100%;
+    border: 0.001em solid #3a3a3c;
+}
+
+/* MAIN SECTION STYLING */
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin: 30px auto 10px auto;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #3a3a3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+@keyframes flipAnimation {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.flip {
+    animation: flipAnimation 0.7s ease-in-out;
+}
+
+.square.gray {
+    background-color: rgb(56, 57, 58);
+    border: none;
+}
+
+.square.green {
+    background-color: rgb(81, 149, 52);
+    border: none;
+}
+
+.square.yellow {
+    background-color: rgb(199, 174, 35);
+    border: none;
+}
+
+.square.scale-up {
+    transform: scale(1.1);
+}
+
+.keyboard {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.key-row {
+    display: flex;
+    gap: 5px;
+}
+
+.key {
+    width: 45px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #818384;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.key.gray {
+    background-color: rgb(56, 57, 58);
+}
+
+.key.green {
+    background-color: rgb(81, 149, 52);
+}
+
+.key.yellow {
+    background-color: rgb(199, 174, 35);
+}
+
+.key.large {
+    width: 90px;
+}
+
+/* FOOTER STYLING */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footing {
+    font-size: 11px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* GLOBAL CLASSES */
+.none {
+    display: none;
+}
+
+/* POPUP STYLING */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, calc(-50% + 50px));
+    background-color: #2d2d2d;
+    display: none;
+    flex-direction: column;
+    flex-direction: start;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    border-radius: 5px;
+    user-select: none;
+    filter: blur(0px);
+}
+
+.popup.active {
+    display: flex;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+.fa-circle-check,
+.fa-trophy,
+.fa-circle-xmark,
+.fa-skull-crossbones {
+    font-size: 60px;
+    display: inline;
+}
+
+.icons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.congrats{
+    margin-top: 10px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.congrats-2 {
+    margin-top: 10px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 140px;
+}
+
+.again {
+    border: none;
+    width: 140px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+@media (max-width: 600px) {
+    header,
+    main,
+    footer {
+        width: 100%;
+    }
+
+    .game-board {
+        margin: 20px auto 8px auto;
+        gap: 4px;
+    }
+
+    .row {
+        gap: 4px;
+    }
+
+    .square {
+        width: clamp(36px, 16vw, 46px);
+        height: clamp(36px, 16vw, 46px);
+        font-size: clamp(16px, 5vw, 20px);
+    }
+
+    .keyboard {
+        width: 100%;
+        padding: 0 6px 12px;
+        font-size: clamp(14px, 4vw, 18px);
+        --key-width: clamp(32px, 8.5vw, 40px);
+        --key-gap: 4px;
+        gap: 6px;
+    }
+
+    .key-row {
+        width: 100%;
+        gap: var(--key-gap);
+        justify-content: center;
+    }
+
+    .key {
+        width: var(--key-width);
+        height: clamp(42px, 12vw, 54px);
+    }
+
+    .key.large {
+        width: calc(var(--key-width) * 1.6);
+    }
+
+    .footing {
+        width: 100%;
+        text-align: center;
+    }
+}
