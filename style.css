@@ -242,6 +242,20 @@ footer {
     margin-bottom: 140px;
 }
 
+.loss-word {
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.popup-loss .congrats-2 {
+    margin-bottom: 40px;
+}
+
+.popup-loss .loss-word {
+    margin-bottom: 100px;
+}
+
 .again {
     border: none;
     width: 140px;

@@ -275,6 +275,10 @@ function wordCheck() {
         document.querySelector("header").classList.add("blurred");
         document.querySelector("main").classList.add("blurred");
         document.querySelector("footer").classList.add("blurred");
+        const lossWord = document.getElementById("loss-word");
+        if (lossWord) {
+          lossWord.textContent = WORD;
+        }
         document.getElementById("popup-loss").classList.add("active");
       }
 
