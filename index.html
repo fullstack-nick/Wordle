@@ -16,6 +16,15 @@
         <hr>
     </header>
     <main>
+        <section class="controls" aria-label="Game settings">
+            <label class="difficulty-label" for="difficulty-select">Difficulty</label>
+            <select class="difficulty-select" id="difficulty-select">
+                <option value="1" selected>Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
+            </select>
+        </section>
+
         <section class="game-board none" id="game-board">
             <script>
                 for (let i = 0; i < 6; i++) {
@@ -23,7 +32,7 @@
                     for (let j = 0; j < 5; j++) {
                         document.write(`<div class="square" id="square-${i}-${j}"></div>`);
                     }
-                    document.write('</div>');
+                    document.write("</div>");
                 }
             </script>
         </section>
@@ -53,7 +62,7 @@
                 <div class="key" id="l">L</div>
             </div>
             <div class="key-row">
-                <div class="key large" id="enter">ENTER</div>
+                <div class="key large" id="enter" data-key="ENTER">ENTER</div>
                 <div class="key" id="z">Z</div>
                 <div class="key" id="x">X</div>
                 <div class="key" id="c">C</div>
@@ -61,7 +70,7 @@
                 <div class="key" id="b">B</div>
                 <div class="key" id="n">N</div>
                 <div class="key" id="m">M</div>
-                <div class="key large" id="backspace">⌫</div>
+                <div class="key large" id="backspace" data-key="BACKSPACE">&#9003;</div>
             </div>
         </section>
     </main>
@@ -70,11 +79,13 @@
     </footer>
     <div class="popup" id="popup-success">
         <div class="icons">
-            <i class="fa-solid fa-circle-check" style="color: #63E6BE;">
-            </i><i class="fa-solid fa-trophy" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-circle-check" style="color: #63E6BE;"></i>
+            <i class="fa-solid fa-trophy" style="color: #FFD43B;"></i>
         </div>
         <hr>
-        <div style="text-align: center;"> <h2 class="congrats">Congratulations,<br>you won!</h2></div>
+        <div style="text-align: center;">
+            <h2 class="congrats">Congratulations,<br>you won!</h2>
+        </div>
         <button class="again" id="again">Play again</button>
     </div>
     <div class="popup popup-loss" id="popup-loss">
@@ -83,7 +94,9 @@
             <i class="fa-solid fa-skull-crossbones" style="color: #ffffff;"></i>
         </div>
         <hr>
-        <div style="text-align: center;"><h1 class="congrats-2">Not your lucky day!</h1></div>
+        <div style="text-align: center;">
+            <h1 class="congrats-2">Not your lucky day!</h1>
+        </div>
         <p class="loss-word">The word was: <span id="loss-word"></span></p>
         <button class="again" id="again">Play again</button>
     </div>
